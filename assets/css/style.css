@@ -1,0 +1,31 @@
+body {
+    margin: 20px;
+}
+
+.jumbotron {
+    padding: 14px;
+    height: 100px;
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    color: rgb(23, 10, 85);
+    line-height: 70px;
+    background-color: rgb(117, 204, 238);
+    border-top: 4px solid rgb(23, 10, 85);
+    border-bottom: 2px solid rgb(23, 10, 85);
+}
+
+#playSpace {
+    height: 400px;
+    background-image: url("world-map-clip-art-2.png");
+
+}
+
+footer {
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(23, 10, 85);
+    color: rgb(117, 204, 238);
+    text-align: center;
+    align-content: center; 
+}
