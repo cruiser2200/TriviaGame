@@ -8,22 +8,65 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="assets/javascript/app.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script> -->
 </head>
 <body>
     <div class="row">
         <div class="jumbotron">Geography Quiz</div>
     </div>
     <div class="row">
+<!-- container for startGame button -->
+        <div class="container" class="col-xs-12" id="startGameSpace">
+            <button class="btn btn-lg btn-default" id="startGameButton1">Start Game</button>
+        </div>
+<!-- container for gamePlay -->
         <div class="container" class="col-xs-12" id="playSpace">
             <h2><span id="question"></span></h2>
-            <input type="radio"><span id="answerA"></span><br>
-            <input type="radio"><span id="answerB"></span><br>
-            <input type="radio"><span id="answerC"></span><br>
-            <input type="radio"><span id="answerD"></span><br>
-            <h3><span id="seconds"></span> seconds remaining</h3>
-            <button class="btn-lg" id="submit">submit</button>
+            <div class="row">
+                <div class="col-xs-4">
+                </div>
+                <div class="col-xs-4">
+                    <ul>
+                        <input type="radio" name="answerChoice" value=0><label id="answerA"></label><br>
+                        <input type="radio" name="answerChoice" value=1><label id="answerB"></label><br>
+                        <input type="radio" name="answerChoice" value=2><label id="answerC"></label><br>
+                        <input type="radio" name="answerChoice" value=3><label id="answerD"></label><br>
+                    </ul>
+                </div>
+            </div>
+            <h3><span id="timer"></span></h3>
+            <button class="btn-lg" id="submitButton">Final Answer</button>
         </div>
+<!-- container for TimesUp         -->
+        <div class="container" class="col-xs-12" id="timesUpSpace">
+            <h2 class="title">Time Is Up!</h2>
+            <p>The correct answer is: <span id="correctAnswer1"></span></p>
+            <img src="assets/images/village_Ganvie_Benin.png" height="200px">
+            <p id="factoid">%insert factoid here%</p>
+        </div>
+<!-- container for incorrectSpace         -->
+        <div class="container" class="col-xs-12" id="incorrectSpace">
+            <h2 class="title">Incorrect!</h2>
+            <p>The correct answer is: <span id="correctAnswerIncorrect"></span></p>
+            <img src="assets/images/village_Ganvie_Benin.png" height="200px">
+            <p id="factoid">%insert factoid here%</p>
+        </div>
+<!-- container for correctSpace             -->
+        <div class="container" class="col-xs-12" id="correctSpace">
+            <h2 class="title">Correct!</h2>
+            <p>The correct answer is: <span id="correctAnswerCorrect"></span></p>
+            <img src="assets/images/village_Ganvie_Benin.png" height="200px">
+            <p id="factoid">%insert factoid here%</p>
+        </div>
+<!-- container for gameOverSpace             -->
+        <div class="container" class="col-xs-12" id="gameOverSpace">
+            <h2 class="title">Game Over</h2>
+            <p><span class="correctAnswers">Correct Answers: %insert number of correct answer here%</span></p>
+            <p><span class="incorrectAnswers">Incorrect Answers: %insert number of incorrect answer here%</span></p>
+            <button class="btn-lg-success" id="startGameButton2">Start Game</button>
+        </div>
+    </div>
     </div>
     <div class="row">
         <div class="container" class="col-xs-12>
@@ -34,6 +77,11 @@
     <footer>
         &copy; Copyright 2018 Mike Smith
     </footer>
-    
+
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="assets/javascript/app.js"></script>
+
+
 </html>

@@ -2,6 +2,24 @@ body {
     margin: 20px;
 }
 
+ul {
+    text-align: left;
+}
+
+input[type=radio] {
+    margin: 0 10px 0 10px;
+}
+
+ul li label{
+
+    font-weight: bold;
+    font-size: 60px;
+    padding: 25px 25px 25px 80px;
+    margin: 10px auto;
+    line-height: 60px;
+  }
+  
+
 .jumbotron {
     padding: 14px;
     height: 100px;
@@ -15,10 +33,50 @@ body {
     border-bottom: 2px solid rgb(23, 10, 85);
 }
 
+#startGameSpace {
+    height: 400px;
+    background-image: url("world-map-clip-art-2.png");
+    text-align: center;
+}
+
+.startGameButton {
+    vertical-align: middle;
+    color: rgb(23, 10, 85);
+}
+
 #playSpace {
     height: 400px;
     background-image: url("world-map-clip-art-2.png");
+    text-align: center;
+    align-items: center;
+}
 
+#timesUpSpace {
+    height: 400px;
+    background-image: url("world-map-clip-art-2.png");
+    text-align: center;
+}
+
+#incorrectSpace {
+    height: 400px;
+    background-image: url("world-map-clip-art-2.png");
+    text-align: center;
+}
+
+#correctSpace {
+    height: 400px;
+    background-image: url("world-map-clip-art-2.png");
+    text-align: center;
+}
+
+#gameOverSpace {
+    height: 400px;
+    background-image: url("world-map-clip-art-2.png");
+    text-align: center;
+}
+
+h2 {
+    font-weight: bold;
 }
 
 footer {
