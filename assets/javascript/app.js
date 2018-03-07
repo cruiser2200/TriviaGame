@@ -29,14 +29,16 @@ var currentQuestion = myQuestions[0];
 // create variable for correct answer to current question
 var currentAnswer = myQuestions[0].choices[myQuestions[0].correctAnswer];
 
+var currentAnswerValue = myQuestions[0].correctAnswer
+
 // create variable for correct answers
 var correctAnswers = 0;
 // create variable for incorrect answers
 var incorrectAnswers = 0;
 // create variable for end of quiz
 var quizOver = false;
-
-
+// create variable for selected input
+var userChoice = $('input:radio[name=answerChoice]:checked').val();
 
 // begin functions
 
@@ -96,6 +98,10 @@ console.log(myQuestions[1].choices[3]);
                         $("#timesUpSpace").show();
                             document.getElementById("correctAnswer1").innerHTML=currentAnswer;
                             console.log(currentAnswer);
+                            setTimeout(function(){
+                                nextQuestion();
+                                console.log("next question should occur");
+                            }, 3000);
                     // }
 
                 return;
@@ -103,29 +109,66 @@ console.log(myQuestions[1].choices[3]);
                 document.getElementById("timer").innerHTML=count + " seconds remaining";
                 }
 
+
 // code for submit button here:
                 $("#submitButton").on("click", function() {
                     console.log("you clicked submit");
     // create variable for user's choice
-                    var userChoice = $('input:radio[name=answerChoice]:checked').val();
+                    // var userChoice = $('input:radio[name=answerChoice]:checked').val();
+                    // var userChoice = $("form input[type='radio']:checked").val();
+
     // if statement goes here:
-                    if(userChoice = currentAnswer) {
+                    if(userChoice === currentAnswerValue) {
                         $("#playSpace").hide();
                         $("#correctSpace").show();
                         document.getElementById("correctAnswerCorrect").innerHTML=currentAnswer;
+                        correctAnswers++;
+                        console.log(correctAnswers);
                         clearInterval(counter);
+                        setTimeout(function(){
+                            nextQuestion();
+                            console.log("next question should occur");
+                        }, 3000);
                     }
-                    else if(userChoice != currentAnswer) {
+                    else if(userChoice !== currentAnswerValue) {
                         $("#playSpace").hide();
                         $("#incorrectSpace").show();
                         document.getElementById("correctAnswerIncorrect").innerHTML=currentAnswer;
+                        incorrectAnswers++;
+                        console.log(incorrectAnswers);
                         clearInterval(counter);
+                        setTimeout(function(){
+                            nextQuestion();
+                            console.log("next question should occur");
+                        }, 3000);
+                        clearInterval(setTimeout);
                     }
 
                 });
                 
+                // create function to show the next question
+                function nextQuestion() {
+
+                    $("#startGameSpace").hide();
+                    $("#timesUpSpace").hide();
+                    $("#correctSpace").hide();
+                    $("#incorrectSpace").hide();
+                    $("#playSpace").show();
+                    for ( var i = 0, l = myQuestions.length; i < l; i++ ) {
+                        currentQuestion += myQuestions[ i ];
+                    }
+                     
+                    console.log( currentAnswer ); //
+                        $("#question").text(myQuestions[i].question);
+                        $("#answerA").text(myQuestions[i].choices[0]);
+                        $("#answerB").text(myQuestions[i].choices[1]);
+                        $("#answerC").text(myQuestions[i].choices[2]);
+                        $("#answerD").text(myQuestions[i].choices[3]);
+                    }
+                }
+
 // end game function brackets            
-    })
+    )
 
 
 
